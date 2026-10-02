@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Resmi Pelayanan Legalisir Ijazah & Dokumen Kelulusan SDN Cipinang Melayu 03 Pagi, Jakarta Timur. Pengajuan online terverifikasi TTE Kepala Sekolah & QR Code.">
+  <meta name="keywords" content="legalisir ijazah SD, SDN Cipinang Melayu 03 Pagi, legalisir online, Jakarta Timur, SKL SD, TTE, PTSP sekolah">
+  <title>e-Legalisir SDN Cipinang Melayu 03 Pagi | Pelayanan Pengesahan Ijazah & Dokumen Resmi</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Notification Bar -->
+  <aside class="top-banner" aria-label="Informasi Layanan">
+    <div class="container">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="top-banner-badge"><span class="pulse-dot"></span> SISTEM ONLINE AKTIF</span>
+        <span>PEMERINTAH PROVINSI DKI JAKARTA • SUDIN PENDIDIKAN WILAYAH II JAKARTA TIMUR • SDN Cipinang Melayu 03 Pagi (07.30 - 15.00 WIB)</span>
+      </div>
+      <div class="top-links">
+        <a href="tel:0218623450" class="top-link" id="btnHelpdeskCall">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Loket TU: (021) 862-3450
+        </a>
+        <a href="#view-faq" class="top-link" onclick="switchView('faq')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Panduan & Biaya
+        </a>
+        <a href="#view-admin" class="top-link" onclick="switchView('admin')" style="background:rgba(255,255,255,0.18); padding:3px 9px; border-radius:4px; font-weight:700;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Portal Petugas TU
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar-sticky">
+    <div class="container nav-wrapper">
+      <div class="brand-logo" onclick="switchView('home')" id="brandLogoHome">
+        <div class="brand-emblem" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>SDN Cipinang Melayu 03 Pagi</h1>
+          <span>Layanan Legalisir Ijazah & Dokumen Kelulusan Resmi</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li><button class="nav-item-btn active" data-view="home" onclick="switchView('home')">Beranda</button></li>
+          <li><button class="nav-item-btn" data-view="form" onclick="switchView('form')">Ajukan Legalisir</button></li>
+          <li><button class="nav-item-btn" data-view="track" onclick="switchView('track')">Lacak Status</button></li>
+          <li><button class="nav-item-btn" data-view="verify" onclick="switchView('verify')">Verifikasi QR</button></li>
+          <li><button class="nav-item-btn" data-view="faq" onclick="switchView('faq')">Panduan & Syarat</button></li>
+          <li>
+            <button class="nav-item-btn" data-view="admin" onclick="switchView('admin')" style="position:relative; display:inline-flex; align-items:center; gap:6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              Portal Petugas TU
+              <span id="navPendingBadge" style="background:#e11d48; color:#fff; font-size:0.7rem; padding:1px 6px; border-radius:99px; margin-left:4px;">1</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggleBtn" title="Ubah Mode Gelap/Terang" aria-label="Toggle Theme">
+          <svg id="themeMoonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="btn-primary" onclick="switchView('form')" id="btnNavAjukan">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Ajukan Permohonan
+        </button>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu Navigasi Mobile">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       VIEW 1: BERANDA / HOME
+       ========================================================================= -->
+  <main id="view-home" class="app-view active">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            LAYANAN RESMI SDN CIPINANG MELAYU 03 PAGI - JAKARTA TIMUR
+          </div>
+          <h1 class="hero-title">
+            Layanan Legalisir Ijazah SDN Cipinang Melayu 03 Pagi Cepat, Akuntabel & <span class="text-gradient">Terverifikasi Digital</span>
+          </h1>
+          <p class="hero-desc">
+            Ajukan permohonan legalisir Ijazah Sekolah Dasar (SD), Surat Keterangan Lulus (SKL), dan Dokumen Kelulusan alumni SDN Cipinang Melayu 03 Pagi secara praktis tanpa harus mengantre lama di sekolah. Dilengkapi validasi Tanda Tangan Elektronik (TTE) Kepala Sekolah dan QR Code anti-pemalsuan.
+          </p>
+
+          <!-- Quick Search Tracker Form inside Hero -->
+          <div class="hero-search-card">
+            <div class="search-input-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="heroTrackInput" placeholder="Masukkan No. Registrasi / NISN / NIK (cth: LEG-2026-7842)" aria-label="Cari nomor registrasi">
+            </div>
+            <button class="btn-primary" onclick="handleHeroTrack()" id="btnHeroTrackSubmit">
+              Cek Status
+            </button>
+          </div>
+
+          <div class="quick-examples">
+            <span>Contoh permohonan demo:</span>
+            <span class="pill-code" onclick="fillAndTrack('LEG-2026-7842')">LEG-2026-7842 (Selesai)</span>
+            <span class="pill-code" onclick="fillAndTrack('LEG-2026-8910')">LEG-2026-8910 (Siap Ambil)</span>
+            <span class="pill-code" onclick="fillAndTrack('LEG-2026-9045')">LEG-2026-9045 (Diproses)</span>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive Digital Certificate Preview -->
+        <div class="hero-visual-card">
+          <div class="cert-card-preview">
+            <div class="cert-header">
+              <div class="cert-gov-badge">
+                <div class="cert-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div>
+                  <h4>KUTIPAN LEGALISIR ELEKTRONIK</h4>
+                  <p>SDN Cipinang Melayu 03 Pagi - Jakarta Timur</p>
+                </div>
+              </div>
+              <span class="cert-status-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                SAH & TERVERIFIKASI
+              </span>
+            </div>
+
+            <div class="cert-body">
+              <div class="cert-item-row">
+                <span class="label">Nomor Registrasi:</span>
+                <span class="value" style="font-family: monospace; color: var(--primary-accent);">LEG-2026-7842</span>
+              </div>
+              <div class="cert-item-row">
+                <span class="label">Nama Siswa / Alumni:</span>
+                <span class="value">Ahmad Faiz Pratama</span>
+              </div>
+              <div class="cert-item-row">
+                <span class="label">Dokumen:</span>
+                <span class="value">Ijazah Sekolah Dasar (SD)</span>
+              </div>
+              <div class="cert-item-row">
+                <span class="label">No. Seri Ijazah:</span>
+                <span class="value">DN-01/D-SD/13/0014258</span>
+              </div>
+              <div class="cert-item-row">
+                <span class="label">Pejabat Pengesah:</span>
+                <span class="value">Siti Nurjanah, M.Pd. (Kepala Sekolah)</span>
+              </div>
+            </div>
+
+            <div class="cert-footer">
+              <div class="cert-stamp-box">
+                <div class="cert-stamp-title">SDN CIPINANG MELAYU 03</div>
+                <div class="cert-stamp-sub">TELAH DILEGALISIR SESUAI ASLI</div>
+              </div>
+              <div class="cert-qr-mini" id="heroMiniQr">
+                <!-- Mini QR rendered via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Metric Card -->
+          <div class="floating-stat-card bottom-left">
+            <div style="background:#10b981; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h5 style="font-size:0.9rem; font-weight:800; line-height:1.2;">Gratis & Cepat 1x24 Jam</h5>
+              <p style="font-size:0.75rem; color:var(--text-muted);">Pencocokan Buku Induk Siswa akurat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Stats & Ticker -->
+    <section class="stats-banner">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="stat-info">
+            <h3 id="statTotalCounter">1,485</h3>
+            <p>Total Dokumen Diproses</p>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-info">
+            <h3>1 x 24 Jam</h3>
+            <p>Waktu Verifikasi Berkas</p>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="stat-info">
+            <h3>Bebas Biaya (Rp 0)</h3>
+            <p>Layanan Gratis Sekolah Negeri</p>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="stat-info">
+            <h3>100% Sah</h3>
+            <p>Validasi QR & TTE Kepala Sekolah</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layanan Unggulan -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Keunggulan Layanan</span>
+          <h2>Mengapa Menggunakan e-Legalisir SDN Cipinang Melayu 03 Pagi?</h2>
+          <p>Pelayanan publik terpadu dari SDN Cipinang Melayu 03 Pagi, Kecamatan Makasar, Jakarta Timur untuk mempermudah alumni dan orang tua murid.</p>
+        </div>
+
+        <div class="feature-cards-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+            </div>
+            <h3>Pencocokan Buku Induk Resmi</h3>
+            <p>Setiap dokumen yang diajukan langsung diverifikasi oleh petugas Tata Usaha dengan Buku Induk Siswa SDN Cipinang Melayu 03 Pagi sehingga keabsahannya terjamin.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3>Pengambilan Fleksibel (Loket TU / Kurir)</h3>
+            <p>Bisa diambil langsung di Ruang Tata Usaha SDN Cipinang Melayu 03 Pagi atau dikirim ke rumah melalui ekspedisi kilat terpercaya berresi resmi.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></svg>
+            </div>
+            <h3>Pengesahan TTE & Validasi QR Code</h3>
+            <p>Dilengkapi kode QR validasi unik untuk mempermudah panitia PPDB SMP / MTs atau instansi lain memeriksa keaslian pengesahan secara real-time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Alur Layanan -->
+    <section class="workflow-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Alur Pengajuan</span>
+          <h2>4 Langkah Mudah Proses Legalisir Ijazah</h2>
+          <p>Prosedur standar pelayanan legalisir daring SDN Cipinang Melayu 03 Pagi yang ringkas dan jelas.</p>
+        </div>
+
+        <div class="workflow-steps-grid">
+          <div class="workflow-step-card">
+            <div class="step-number">1</div>
+            <h4>Pengajuan Berkas</h4>
+            <p>Isi formulir online, cantumkan nomor ijazah/NISN, dan cukup unggah 1 dokumen asli (KTP/Ijazah asli).</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-number">2</div>
+            <h4>Verifikasi Buku Induk</h4>
+            <p>Petugas Tata Usaha SDN Cipinang Melayu 03 Pagi mencocokkan data nomor seri ijazah dengan Buku Induk Siswa.</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-number">3</div>
+            <h4>Pengesahan Kepala Sekolah</h4>
+            <p>Penerbitan stempel legalisir basah dan Tanda Tangan Elektronik (TTE) resmi Kepala Sekolah.</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-number">4</div>
+            <h4>Penerimaan Dokumen</h4>
+            <p>Ambil dokumen fisik di Ruang TU SDN Cipinang Melayu 03 Pagi atau unduh salinan e-Legalisir digital ber-QR Code.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button class="btn-primary" onclick="switchView('form')" style="font-size:1rem; padding:12px 30px;">
+            Mulai Ajukan Legalisir Sekarang
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       VIEW 2: FORM PENGAJUAN LEGALISIR (WIZARD MULTI-LANGKAH)
+       ========================================================================= -->
+  <section id="view-form" class="app-view form-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Formulir Pendaftaran</span>
+        <h2>Pengajuan Permohonan Legalisir Dokumen</h2>
+        <p>Layanan legalisir resmi untuk alumni dan peserta didik <strong>SDN Cipinang Melayu 03 Pagi</strong>. Silakan lengkapi data pemohon, rincian dokumen, dan unggah 1 berkas pindaian dokumen (KTP/Ijazah asli).</p>
+      </div>
+
+      <div class="wizard-container">
+        <!-- Progress Stepper Header -->
+        <div class="wizard-header">
+          <div class="stepper-progress">
+            <div class="step-indicator active" id="stepIndicator1">
+              <div class="step-bullet">1</div>
+              <div class="step-label">Data Pemohon</div>
+            </div>
+            <div class="step-indicator" id="stepIndicator2">
+              <div class="step-bullet">2</div>
+              <div class="step-label">Rincian Dokumen</div>
+            </div>
+            <div class="step-indicator" id="stepIndicator3">
+              <div class="step-bullet">3</div>
+              <div class="step-label">Unggah Dokumen</div>
+            </div>
+            <div class="step-indicator" id="stepIndicator4">
+              <div class="step-bullet">4</div>
+              <div class="step-label">Pengambilan</div>
+            </div>
+            <div class="step-indicator" id="stepIndicator5">
+              <div class="step-bullet">5</div>
+              <div class="step-label">Konfirmasi</div>
+            </div>
+          </div>
+        </div>
+
+        <form id="legalisirForm" onsubmit="event.preventDefault();">
+          <div class="wizard-body">
+            
+            <!-- STEP 1: DATA PEMOHON -->
+            <div class="wizard-step-pane active" id="stepPane1">
+              <div class="step-title-box">
+                <h3>Langkah 1: Data Identitas Pemohon</h3>
+                <p>Pastikan data identitas sesuai dengan data kependudukan atau Buku Induk Siswa SDN Cipinang Melayu 03 Pagi.</p>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group full-width">
+                  <label class="form-label">Kategori Pemohon <span class="required">*</span></label>
+                  <div class="radio-card-grid">
+                    <label class="radio-card selected" onclick="selectRadioCard(this)">
+                      <input type="radio" name="applicantCategory" value="Alumni / Lulusan SDN Cipinang Melayu 03 Pagi" checked>
+                      <div class="radio-card-content">
+                        <h5>Alumni / Lulusan SDN Cipinang Melayu 03 Pagi</h5>
+                        <p>Legalisir Ijazah SD, SKL Sementara, atau Rapor Siswa Alumni</p>
+                      </div>
+                    </label>
+                    <label class="radio-card" onclick="selectRadioCard(this)">
+                      <input type="radio" name="applicantCategory" value="Orang Tua / Wali Murid">
+                      <div class="radio-card-content">
+                        <h5>Orang Tua / Wali Murid</h5>
+                        <p>Pengajuan pengesahan dokumen atas nama putra/putri alumni siswa</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicantIdentifier">Nomor Induk Siswa / NIK / NISN <span class="required">*</span></label>
+                  <input type="text" id="applicantIdentifier" class="form-control" placeholder="Contoh: 0124567891 (NISN) atau 3175..." required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicantName">Nama Lengkap Siswa / Pemohon (Sesuai Ijazah) <span class="required">*</span></label>
+                  <input type="text" id="applicantName" class="form-control" placeholder="Contoh: Ahmad Faiz Pratama" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicantPhone">No. WhatsApp / HP Aktif <span class="required">*</span></label>
+                  <input type="tel" id="applicantPhone" class="form-control" placeholder="Contoh: 081298765432" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicantEmail">Alamat Email Aktif <span class="required">*</span></label>
+                  <input type="email" id="applicantEmail" class="form-control" placeholder="Contoh: pemohon@gmail.com" required>
+                </div>
+
+                <div class="form-group full-width">
+                  <label class="form-label" for="applicantAddress">Alamat Domisili Lengkap <span class="required">*</span></label>
+                  <textarea id="applicantAddress" class="form-control" rows="2" placeholder="Nama Jalan, RT/RW, Kelurahan, Kecamatan, Kota/Kabupaten, Kode Pos" required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: DETAIL DOKUMEN -->
+            <div class="wizard-step-pane" id="stepPane2">
+              <div class="step-title-box">
+                <h3>Langkah 2: Rincian Dokumen yang Dilegalisir</h3>
+                <p>Pilih jenis dokumen kelulusan yang diterbitkan oleh SDN Cipinang Melayu 03 Pagi.</p>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="documentType">Jenis Dokumen <span class="required">*</span></label>
+                  <select id="documentType" class="form-control" required onchange="calculateFee()">
+                    <option value="Ijazah Sekolah Dasar (SD)" selected>Ijazah Sekolah Dasar (SD)</option>
+                    <option value="Surat Keterangan Lulus (SKL) Sementara">Surat Keterangan Lulus (SKL) Sementara</option>
+                    <option value="Surat Keterangan Hasil Ujian Akhir (SKHU / US)">Surat Keterangan Hasil Ujian Akhir (SKHU / US)</option>
+                    <option value="Buku Rapor Siswa (Legalisir Nilai Rapor)">Buku Rapor Siswa (Legalisir Nilai Rapor)</option>
+                    <option value="Surat Keterangan Pengganti Ijazah (SKPI) Hilang/Rusak">Surat Keterangan Pengganti Ijazah (SKPI) Hilang/Rusak</option>
+                    <option value="Surat Keterangan Pindah / Mutasi Siswa">Surat Keterangan Pindah / Mutasi Siswa</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="institutionName">Nama Lembaga / Sekolah <span class="required">*</span></label>
+                  <input type="text" id="institutionName" class="form-control" value="SDN Cipinang Melayu 03 Pagi" readonly style="background:var(--bg-card-subtle); cursor:not-allowed;" required>
+                  <span style="font-size:0.75rem; color:var(--text-muted); margin-top:4px; display:block;">Instansi resmi penerbit dokumen: SDN Cipinang Melayu 03 Pagi, Jakarta Timur</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="documentNumber">Nomor Seri Ijazah / Dokumen Asli <span class="required">*</span></label>
+                  <input type="text" id="documentNumber" class="form-control" placeholder="Contoh: DN-01/D-SD/13/0014258 atau No. SKL" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="graduationYear">Tahun Kelulusan / Penerbitan <span class="required">*</span></label>
+                  <input type="number" id="graduationYear" class="form-control" min="1980" max="2026" value="2024" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="copyCount">Jumlah Salinan Eksemplar <span class="required">*</span></label>
+                  <select id="copyCount" class="form-control" onchange="calculateFee()">
+                    <option value="1">1 Lembar Salinan</option>
+                    <option value="2">2 Lembar Salinan</option>
+                    <option value="3">3 Lembar Salinan</option>
+                    <option value="5" selected>5 Lembar Salinan (Standar Pemberkasan PPDB)</option>
+                    <option value="10">10 Lembar Salinan</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="legalPurpose">Keperluan Legalisir <span class="required">*</span></label>
+                  <select id="legalPurpose" class="form-control">
+                    <option value="Pendaftaran PPDB SMP / MTs (Zonasi, Afirmasi, Prestasi)">Pendaftaran PPDB Masuk SMP / MTs Negeri & Swasta</option>
+                    <option value="Pindah Domisili / Mutasi Sekolah ke Luar Kota">Pindah Domisili / Mutasi Sekolah</option>
+                    <option value="Pemberkasan KJP Plus / PIP / Beasiswa Pendidikan">Pemberkasan KJP Plus / PIP / Beasiswa Pendidikan</option>
+                    <option value="Pemberkasan Administrasi Sipil / Kedinasan">Pemberkasan Administrasi Sipil / Akta / Lainnya</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: UNGGAH BERKAS SCAN (HANYA 1 BERKAS DENGAN KETERANGAN: KTP/Ijazah asli) -->
+            <div class="wizard-step-pane" id="stepPane3">
+              <div class="step-title-box">
+                <h3>Langkah 3: Unggah Dokumen (KTP / Ijazah Asli)</h3>
+                <p>Untuk verifikasi legalisir ini, Anda hanya perlu mengunggah <strong>1 dokumen</strong> dengan keterangan <strong>(KTP / Ijazah asli)</strong>.</p>
+              </div>
+
+              <!-- Notice Box Keterangan -->
+              <div style="background: rgba(37,99,235,0.06); border-left: 4px solid var(--primary-accent); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+                <div style="display:flex; align-items:flex-start; gap:10px;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-accent)" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <div>
+                    <h5 style="margin:0 0 4px; font-size:0.95rem; font-weight:700; color:var(--text-main);">Ketentuan Berkas Unggahan:</h5>
+                    <p style="margin:0; font-size:0.875rem; color:var(--text-muted); line-height:1.5;">
+                      Cukup unggah <strong>1 dokumen saja</strong>: Pindaian (scan) atau foto <strong>KTP Orang Tua/Wali Asli</strong> ATAU <strong>Ijazah / SKL Asli</strong> yang diterbitkan oleh SDN Cipinang Melayu 03 Pagi. Pastikan foto jelas, tidak terpotong, nomor seri terbaca, dan cap stempel sekolah tampak utuh.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Single Upload Form Group -->
+              <div class="form-group">
+                <label class="form-label" style="font-size:1rem; font-weight:700;">
+                  Unggah Dokumen (KTP / Ijazah Asli) <span class="required">*</span>
+                </label>
+                
+                <div class="dropzone-box" id="dropzoneDoc" onclick="document.getElementById('fileDoc').click()">
+                  <input type="file" id="fileDoc" accept="image/*,.pdf" style="display:none;" onchange="handleFileSelected(this, 'previewDoc')">
+                  <div class="dropzone-icon">
+                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="17 8 12 3 7 8"/>
+                      <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                  </div>
+                  <div class="dropzone-text">
+                    <h5 style="font-size:1.05rem;">Klik untuk Unggah atau Tarik Berkas ke Sini</h5>
+                    <p style="margin-top:6px;">
+                      Format yang didukung: <strong>PDF, JPG, JPEG, PNG</strong> (Maksimal 5 MB)<br>
+                      Keterangan Berkas: <strong style="color:var(--primary-accent);">(KTP / Ijazah Asli)</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div id="previewDoc" class="uploaded-preview-item" style="display:none;">
+                  <div class="preview-file-info">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                    <div>
+                      <strong id="previewDocName" style="font-size:0.925rem;">scan_ktp_atau_ijazah_asli.pdf</strong>
+                      <div id="previewDocSize" style="font-size:0.775rem; color:var(--text-muted); margin-top:2px;">1.8 MB • Dokumen (KTP/Ijazah asli) Siap Diverifikasi</div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-sm btn-sm-secondary" onclick="resetFile('fileDoc', 'previewDoc')">Ganti Berkas</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: OPSI PENGIRIMAN & BIAYA -->
+            <div class="wizard-step-pane" id="stepPane4">
+              <div class="step-title-box">
+                <h3>Langkah 4: Metode Pengambilan Dokumen Fisik</h3>
+                <p>Pilih bagaimana Anda ingin menerima dokumen fisik salinan legalisir yang telah berstempel basah.</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Pilihan Metode Pengambilan <span class="required">*</span></label>
+                <div class="radio-card-grid">
+                  <label class="radio-card selected" onclick="selectDeliveryMethod(this, 'pickup')">
+                    <input type="radio" name="deliveryMethod" value="Ambil di Loket TU SDN Cipinang Melayu 03 Pagi" checked>
+                    <div class="radio-card-content">
+                      <h5>Ambil Langsung di Loket Tata Usaha (TU) Sekolah</h5>
+                      <p>Gratis (Rp 0) • Datang langsung ke Ruang TU SDN Cipinang Melayu 03 Pagi membawa bukti pendaftaran</p>
+                    </div>
+                  </label>
+                  <label class="radio-card" onclick="selectDeliveryMethod(this, 'courier')">
+                    <input type="radio" name="deliveryMethod" value="Kirim Ekspedisi Kilat (POS Indonesia)">
+                    <div class="radio-card-content">
+                      <h5>Kirim via Ekspedisi Resmi (POS Indonesia / JNE)</h5>
+                      <p>Hanya bayar ongkos kirim resmi + map kedap air • Dikirim langsung ke alamat rumah dengan resi pelacak</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Extra address field if courier selected -->
+              <div id="courierDetailsSection" style="display:none; margin-bottom: 24px; padding:16px; background:var(--bg-card-subtle); border-radius:var(--radius-md);">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="courierService">Pilihan Layanan Kurir</label>
+                    <select id="courierService" class="form-control" onchange="calculateFee()">
+                      <option value="POS Indonesia (Next Day) - Rp 15.000">POS Indonesia - Next Day Express (Rp 15.000)</option>
+                      <option value="JNE Express Kilat - Rp 18.000">JNE Express Kilat (Rp 18.000)</option>
+                      <option value="SiCepat Best - Rp 14.000">SiCepat BEST (Rp 14.000)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="shippingAddress">Alamat Tujuan Pengiriman Ekspedisi</label>
+                    <input type="text" id="shippingAddress" class="form-control" placeholder="Pastikan alamat lengkap dengan RT/RW dan Kode Pos">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fee Breakdown -->
+              <div class="order-summary-box">
+                <h4 style="font-size:1rem; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  Rincian Biaya Pelayanan SDN Cipinang Melayu 03 Pagi
+                </h4>
+                <div class="summary-row">
+                  <span id="summaryDocLabel">Legalisir Dokumen (5 lembar):</span>
+                  <span id="summaryDocFee" style="font-weight:700; color:var(--emerald);">GRATIS (Layanan SDN)</span>
+                </div>
+                <div class="summary-row">
+                  <span>Ongkos Kirim & Pengemasan:</span>
+                  <span id="summaryShipFee" style="font-weight:600;">Rp 0 (Ambil di Loket TU Sekolah)</span>
+                </div>
+                <div class="summary-row">
+                  <span>Penerbitan Salinan Digital e-Legalisir QR:</span>
+                  <span style="font-weight:600; color:var(--emerald);">GRATIS (Rp 0)</span>
+                </div>
+                <div class="summary-row total">
+                  <span>Total Biaya Pelayanan:</span>
+                  <span id="summaryTotalFee">GRATIS (Rp 0)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 5: TANDA TANGAN & KONFIRMASI -->
+            <div class="wizard-step-pane" id="stepPane5">
+              <div class="step-title-box">
+                <h3>Langkah 5: Tanda Tangan Pemohon & Pakta Integritas</h3>
+                <p>Bubuhkan tanda tangan digital Anda dan setujui pernyataan kebenaran dokumen.</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Tanda Tangan Digital Pemohon <span class="required">*</span></label>
+                <div class="signature-box">
+                  <canvas id="signatureCanvas"></canvas>
+                  <div class="sig-tools">
+                    <span style="font-size:0.75rem; color:var(--text-muted);">Gunakan mouse atau sentuhan jari pada layar untuk membubuhkan tanda tangan</span>
+                    <button type="button" class="btn-sm btn-sm-secondary" onclick="clearSignature()">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                      Hapus & Ulangi
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-top:20px;">
+                <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer;">
+                  <input type="checkbox" id="agreeCheckbox" required style="margin-top:4px; accent-color:var(--primary-accent); width:18px; height:18px;">
+                  <span style="font-size:0.875rem; line-height:1.5;">
+                    <strong>Pakta Integritas & Pernyataan Keaslian:</strong> Saya menyatakan dengan sebenar-benarnya bahwa berkas dokumen asli (KTP/Ijazah asli) yang saya unggah adalah asli, sah, dan diterbitkan secara resmi untuk alumni siswa SDN Cipinang Melayu 03 Pagi. Apabila di kemudian hari terbukti melanggar ketentuan, saya bersedia diproses sesuai perundang-undangan hukum yang berlaku di Republik Indonesia.
+                  </span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Wizard Navigation Buttons -->
+          <div class="wizard-footer">
+            <button type="button" class="btn-secondary" id="btnWizardPrev" onclick="navigateWizard(-1)" style="display:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              Sebelumnya
+            </button>
+            <div style="margin-left:auto;">
+              <button type="button" class="btn-primary" id="btnWizardNext" onclick="navigateWizard(1)">
+                Lanjut
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <button type="button" class="btn-primary" id="btnWizardSubmit" onclick="submitApplicationForm()" style="display:none; background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Kirim Permohonan ke SDN Cipinang Melayu 03 Pagi
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 3: LACAK STATUS PERMOHONAN
+       ========================================================================= -->
+  <section id="view-track" class="app-view track-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pelacakan Berkas</span>
+        <h2>Lacak Status Permohonan Legalisir</h2>
+        <p>Ketikkan Nomor Registrasi (contoh: LEG-2026-7842) atau Nomor Induk Siswa/NIK untuk melihat perjalanan verifikasi berkas secara real-time di SDN Cipinang Melayu 03 Pagi.</p>
+      </div>
+
+      <div class="track-search-panel">
+        <div class="hero-search-card" style="margin:0 auto 16px; max-width:100%;">
+          <div class="search-input-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="trackInput" placeholder="Masukkan Nomor Registrasi Permohonan atau NISN..." aria-label="Tracking input">
+          </div>
+          <button class="btn-primary" onclick="performTrackingSearch()" id="btnPerformTrack">
+            Lacak Berkas
+          </button>
+        </div>
+
+        <div class="quick-examples" style="justify-content:center;">
+          <span>Coba periksa status:</span>
+          <span class="pill-code" onclick="fillAndTrack('LEG-2026-7842')">LEG-2026-7842 (Selesai)</span>
+          <span class="pill-code" onclick="fillAndTrack('LEG-2026-8910')">LEG-2026-8910 (Siap Ambil)</span>
+          <span class="pill-code" onclick="fillAndTrack('LEG-2026-9045')">LEG-2026-9045 (Diproses)</span>
+          <span class="pill-code" onclick="fillAndTrack('LEG-2026-6701')">LEG-2026-6701 (Ditolak)</span>
+        </div>
+      </div>
+
+      <!-- Result Card Container -->
+      <div id="trackResultContainer" style="display:none;">
+        <div class="track-result-card">
+          <div class="track-header">
+            <div class="track-header-left">
+              <h3>
+                <span id="trackHeaderId">LEG-2026-7842</span>
+                <span id="trackHeaderName" style="font-weight:400; font-size:1.1rem; opacity:0.9;">- Ahmad Faiz Pratama</span>
+              </h3>
+              <p id="trackHeaderDoc">Ijazah Sekolah Dasar (SD) • Diajukan pada: 28 Sep 2026, 09:15 WIB</p>
+            </div>
+            <div id="trackHeaderStatusBadge" class="status-badge-lg selesai">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Selesai</span>
+            </div>
+          </div>
+
+          <div class="track-body">
+            <!-- Data Grid -->
+            <div class="detail-table-grid">
+              <div class="detail-table-row">
+                <span class="label">Nomor Seri Ijazah / Dokumen</span>
+                <span class="val" id="trackDocNumber">DN-01/D-SD/13/0014258</span>
+              </div>
+              <div class="detail-table-row">
+                <span class="label">Lembaga Penerbit</span>
+                <span class="val" id="trackInstitution">SDN Cipinang Melayu 03 Pagi</span>
+              </div>
+              <div class="detail-table-row">
+                <span class="label">Jumlah Salinan</span>
+                <span class="val" id="trackCopyCount">5 Lembar</span>
+              </div>
+              <div class="detail-table-row">
+                <span class="label">Metode Penyerahan</span>
+                <span class="val" id="trackDeliveryMethod">Ambil di Loket Tata Usaha (TU) SDN Cipinang Melayu 03 Pagi</span>
+              </div>
+              <div class="detail-table-row">
+                <span class="label">Status Biaya</span>
+                <span class="val" id="trackPaymentStatus" style="color:var(--emerald);">Gratis (Layanan Bebas Biaya SDN)</span>
+              </div>
+              <div class="detail-table-row">
+                <span class="label">Pejabat Verifikator</span>
+                <span class="val" id="trackOfficer">Siti Nurjanah, M.Pd.</span>
+              </div>
+            </div>
+
+            <!-- Notes Alert Box -->
+            <div id="trackNotesBox" style="background:rgba(37,99,235,0.06); border-left:4px solid var(--primary-accent); padding:14px 18px; border-radius:4px; margin-bottom:28px;">
+              <strong style="font-size:0.85rem; color:var(--text-main);">Catatan Petugas Tata Usaha:</strong>
+              <p id="trackVerifierNotes" style="font-size:0.9rem; color:var(--text-muted); margin-top:4px;">
+                Berkas (KTP/Ijazah asli) telah dicocokkan dengan Buku Induk Siswa SDN Cipinang Melayu 03 Pagi. Data sah & valid 100%.
+              </p>
+            </div>
+
+            <!-- Timeline Stepper -->
+            <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:16px;">Riwayat Perjalanan Berkas</h4>
+            <div class="timeline-vertical" id="trackTimelineVertical">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="track-actions" style="margin-top:32px; border-top:1px solid var(--border-color); padding-top:24px;">
+              <button class="btn-primary" id="btnTrackViewCert" onclick="showOfficialCertModal(currentTrackedApp)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Lihat & Cetak e-Legalisir Resmi
+              </button>
+              <button class="btn-secondary" onclick="showReceiptModal(currentTrackedApp)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Cetak Tanda Terima Loket TU
+              </button>
+              <button class="btn-secondary" onclick="simulateWhatsAppNotification(currentTrackedApp)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                Kirim Notifikasi WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 4: VERIFIKASI KEABSAHAN QR CODE & DOKUMEN RESMI
+       ========================================================================= -->
+  <section id="view-verify" class="app-view verify-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Uji Keabsahan Digital</span>
+        <h2>Verifikasi Keaslian Dokumen Legalisir</h2>
+        <p>Sarana verifikasi publik untuk memvalidasi keabsahan pengesahan dan TTE Kepala Sekolah SDN Cipinang Melayu 03 Pagi.</p>
+      </div>
+
+      <div class="verify-card-wrap">
+        <div class="hero-search-card" style="margin:0 auto 36px; max-width:680px;">
+          <div class="search-input-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <input type="text" id="verifyInput" placeholder="Masukkan Kode Registrasi Legalisir (cth: LEG-2026-7842)...">
+          </div>
+          <button class="btn-primary" onclick="performVerificationCheck()" id="btnPerformVerify">
+            Validasi Sekarang
+          </button>
+        </div>
+
+        <!-- Official Certificate Display -->
+        <div class="official-cert-frame" id="officialCertFrame">
+          <!-- Kop Surat Resmi SDN Cipinang Melayu 03 Pagi -->
+          <div class="kop-surat">
+            <div class="kop-logo">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.8">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="kop-text">
+              <h2>PEMERINTAH PROVINSI DAERAH KHUSUS IBUKOTA JAKARTA</h2>
+              <h4 style="color:var(--text-main); font-weight:700; margin:2px 0;">DINAS PENDIDIKAN • SUKU DINAS PENDIDIKAN WILAYAH I JAKARTA TIMUR</h4>
+              <h2 style="font-size:1.25rem; font-weight:900; color:var(--primary-accent); margin:4px 0;">SEKOLAH DASAR NEGERI CIPINANG MELAYU 03 PAGI</h2>
+              <p>NPSN: 20104140 • Jl. Cipinang Bali II No. 1 / Jl. Elang, RT.03/RW.13, Cipinang Melayu, Kec. Makasar, Jakarta Timur 13620 • Telp: (021) 862-3450</p>
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-bottom:28px;">
+            <h3 style="font-size:1.35rem; font-weight:800; text-decoration:underline; letter-spacing:0.04em;">SURAT KETERANGAN PENGESAHAN / LEGALISIR ELEKTRONIK</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Nomor: <strong id="certRegNumber">LEG-2026-7842/SDN-CM03/LEG/2026</strong></p>
+          </div>
+
+          <p style="font-size:0.95rem; line-height:1.7; margin-bottom:20px; text-align:justify;">
+            Kepala Sekolah Dasar Negeri Cipinang Melayu 03 Pagi menerangkan dengan sebenarnya bahwa dokumen asli yang disebutkan di bawah ini telah diteliti, dicocokkan dengan Buku Induk Siswa SDN Cipinang Melayu 03 Pagi, dan dinyatakan <strong>BENAR SERTA SAH SESUAI DENGAN ASLINYA</strong>:
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin-bottom:24px; font-size:0.95rem;">
+            <tr>
+              <td style="width:35%; padding:8px 0; color:var(--text-muted);">Nama Pemilik Dokumen</td>
+              <td style="width:5%; padding:8px 0;">:</td>
+              <td style="padding:8px 0;"><strong id="certApplicantName">Ahmad Faiz Pratama</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0; color:var(--text-muted);">Nomor Induk Siswa / NIK</td>
+              <td style="padding:8px 0;">:</td>
+              <td style="padding:8px 0;"><strong id="certApplicantId">3175041209120002</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0; color:var(--text-muted);">Jenis Dokumen</td>
+              <td style="padding:8px 0;">:</td>
+              <td style="padding:8px 0;"><strong id="certDocType">Ijazah Sekolah Dasar (SD)</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0; color:var(--text-muted);">Nomor Seri Ijazah / Dokumen</td>
+              <td style="padding:8px 0;">:</td>
+              <td style="padding:8px 0;"><strong id="certDocNum">DN-01/D-SD/13/0014258</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0; color:var(--text-muted);">Satuan Pendidikan Penerbit</td>
+              <td style="padding:8px 0;">:</td>
+              <td style="padding:8px 0;"><strong id="certInstitution">SDN Cipinang Melayu 03 Pagi</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0; color:var(--text-muted);">Status Keabsahan Hukum</td>
+              <td style="padding:8px 0;">:</td>
+              <td style="padding:8px 0;">
+                <span class="status-pill selesai" id="certValidityStatus">TERVERIFIKASI RESMI (VALID & SAH)</span>
+              </td>
+            </tr>
+          </table>
+
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:28px;">
+            Surat pengesahan ini diterbitkan secara elektronik dengan jaminan keaslian kriptografis TTE Kepala Sekolah SDN Cipinang Melayu 03 Pagi. Salinan dokumen legalisir ini sah digunakan untuk keperluan pendaftaran PPDB SMP/MTs, mutasi sekolah, dan pemberkasan administrasi resmi.
+          </p>
+
+          <!-- Seal and Signatures -->
+          <div class="cert-verification-seal">
+            <div style="text-align:center;">
+              <div id="certQrDisplay" style="width:110px; height:110px; margin:0 auto 8px; background:#fff; padding:6px; border:1px solid var(--border-color); border-radius:8px;"></div>
+              <span style="font-size:0.75rem; color:var(--text-muted); font-family:monospace;" id="certHashShort">SHA256:7b98d1a4e5...</span>
+            </div>
+
+            <div class="official-stamp">
+              <span class="stamp-text-top">SDN CIPINANG MELAYU 03</span>
+              <span class="stamp-text-center">TELAH DILEGALISIR</span>
+              <span class="stamp-text-bottom">SESUAI DENGAN ASLINYA</span>
+            </div>
+
+            <div class="digital-signature-block">
+              <p>Jakarta Timur, <span id="certSignDate">30 September 2026</span></p>
+              <div class="tte-box">
+                <div class="tte-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  DITANDATANGANI SECARA ELEKTRONIK
+                </div>
+                <div style="font-size:0.7rem; color:var(--text-muted); margin-top:2px;">Kepala SDN Cipinang Melayu 03 Pagi</div>
+              </div>
+              <strong style="font-size:0.95rem; text-decoration:underline;" id="certOfficerName">Siti Nurjanah, M.Pd.</strong>
+              <div style="font-size:0.75rem; color:var(--text-muted);" id="certOfficerNip">NIP. 19720415 199803 2 004</div>
+            </div>
+          </div>
+
+          <div style="margin-top:30px; text-align:center;">
+            <button class="btn-primary" onclick="window.print()" style="padding:10px 24px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Cetak Dokumen Pengesahan (Print / PDF)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 5: PANDUAN & BIAYA (FAQ)
+       ========================================================================= -->
+  <section id="view-faq" class="app-view form-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pusat Informasi</span>
+        <h2>Panduan, Tarif & Pertanyaan Umum (FAQ)</h2>
+        <p>Informasi resmi mengenai persyaratan, ketentuan upload 1 dokumen (KTP/Ijazah asli), dan jam operasional loket TU SDN Cipinang Melayu 03 Pagi.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Berapa biaya pengesahan / legalisir ijazah di SDN Cipinang Melayu 03 Pagi?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Pelayanan legalisir ijazah, SKL, dan rapor di SDN Cipinang Melayu 03 Pagi adalah <strong>GRATIS (Rp 0,- / Bebas Biaya)</strong> sesuai dengan kebijakan Dinas Pendidikan Provinsi DKI Jakarta untuk sekolah dasar negeri. Biaya hanya dikenakan apabila pemohon menghendaki dokumen fisik dikirimkan via kurir ekspedisi ke rumah (ongkir standar POS/JNE).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Dokumen apa saja yang perlu diunggah saat pendaftaran online?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Anda hanya perlu mengunggah <strong>1 berkas pindaian atau foto dokumen asli</strong>: yaitu <strong>KTP Orang Tua/Wali Asli</strong> atau <strong>Ijazah / SKL Asli</strong> dari SDN Cipinang Melayu 03 Pagi. Pastikan gambar tidak buram, cap stempel sekolah tampak, dan nomor seri ijazah terlihat jelas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Berapa lama estimasi proses verifikasi berkas oleh Tata Usaha?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Rata-rata waktu verifikasi berkas daring adalah <strong>1 x 24 jam kerja</strong> (pada hari Senin s/d Jumat, jam 07.30 - 15.00 WIB). Petugas Tata Usaha akan mencocokkan nomor seri ijazah dengan arsip Buku Induk Siswa SDN Cipinang Melayu 03 Pagi.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Apakah legalisir digital dengan QR Code sah untuk pendaftaran PPDB SMP?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Ya, sangat sah. Surat pengesahan dilengkapi TTE Kepala Sekolah dan QR Code verifikasi resmi sesuai ketentuan UU ITE No. 11/2008 dan Surat Edaran Dinas Pendidikan DKI Jakarta, sehingga diakui sepenuhnya oleh panitia PPDB SMP / MTs negeri maupun swasta.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Bagaimana prosedur pengambilan dokumen fisik di Loket Tata Usaha?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Setelah status permohonan Anda berubah menjadi <strong>"Siap Diambil"</strong>, silakan datang ke Ruang Tata Usaha SDN Cipinang Melayu 03 Pagi pada jam kerja (07.30 - 15.00 WIB) dengan menunjukkan Bukti Tanda Terima Pendaftaran (bisa ditunjukkan lewat layar ponsel atau dicetak).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 6: PORTAL PETUGAS / ADMIN DASHBOARD
+       ========================================================================= -->
+  <section id="view-admin" class="app-view admin-section">
+    <div class="container">
+      <div class="admin-top-bar">
+        <div class="admin-title-wrap">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:4px;">
+            <h2>Portal Petugas Tata Usaha & Verifikator</h2>
+            <span class="admin-badge-role">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Tata Usaha SDN Cipinang Melayu 03 Pagi
+            </span>
+          </div>
+          <p>Kelola permohonan masuk, periksa keabsahan dengan Buku Induk Siswa, dan terbitkan legalisir bertanda tangan elektronik Kepala Sekolah.</p>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button class="btn-secondary" onclick="exportDataToCsv()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Ekspor Data (CSV)
+          </button>
+          <button class="btn-secondary" onclick="resetSampleDataPrompt()" title="Reset ke Data Bawaan SDN 03">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            Reset Simulasi
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Grid -->
+      <div class="admin-kpi-grid">
+        <div class="kpi-card active" onclick="filterAdminTable('Semua', this)">
+          <div class="kpi-label">Total Permohonan</div>
+          <div class="kpi-value" id="kpiTotal">5</div>
+        </div>
+        <div class="kpi-card" onclick="filterAdminTable('Menunggu Verifikasi', this)">
+          <div class="kpi-label">Menunggu Verifikasi</div>
+          <div class="kpi-value" id="kpiPending" style="color:#e11d48;">1</div>
+        </div>
+        <div class="kpi-card" onclick="filterAdminTable('Sedang Diproses', this)">
+          <div class="kpi-label">Sedang Diproses</div>
+          <div class="kpi-value" id="kpiProcessing" style="color:#d97706;">1</div>
+        </div>
+        <div class="kpi-card" onclick="filterAdminTable('Siap Diambil', this)">
+          <div class="kpi-label">Siap Diambil / Kirim</div>
+          <div class="kpi-value" id="kpiReady" style="color:#0284c7;">1</div>
+        </div>
+        <div class="kpi-card" onclick="filterAdminTable('Selesai', this)">
+          <div class="kpi-label">Selesai Diterbitkan</div>
+          <div class="kpi-value" id="kpiDone" style="color:#059669;">1</div>
+        </div>
+      </div>
+
+      <!-- Table Container -->
+      <div class="admin-table-container">
+        <div class="table-toolbar">
+          <div class="filter-chips">
+            <button class="filter-chip active" onclick="filterAdminTable('Semua', this)">Semua Data</button>
+            <button class="filter-chip" onclick="filterAdminTable('Menunggu Verifikasi', this)">Menunggu Verifikasi</button>
+            <button class="filter-chip" onclick="filterAdminTable('Sedang Diproses', this)">Diproses</button>
+            <button class="filter-chip" onclick="filterAdminTable('Siap Diambil', this)">Siap Diambil</button>
+            <button class="filter-chip" onclick="filterAdminTable('Selesai', this)">Selesai</button>
+            <button class="filter-chip" onclick="filterAdminTable('Ditolak', this)">Ditolak</button>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:10px;">
+            <input type="text" id="adminSearchInput" class="form-control" style="width:240px; padding:6px 12px; font-size:0.85rem;" placeholder="Cari nama / nomor ID..." onkeyup="filterAdminSearch()">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>No. Registrasi</th>
+                <th>Nama Siswa / Pemohon</th>
+                <th>Jenis Dokumen</th>
+                <th>Nomor Ijazah</th>
+                <th>Tanggal Pengajuan</th>
+                <th>Pengambilan</th>
+                <th>Status</th>
+                <th style="text-align:center;">Aksi Petugas</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MODALS
+       ========================================================================= -->
+
+  <!-- Modal: Bukti Pendaftaran / Tanda Terima Loket TU -->
+  <div class="modal-overlay" id="receiptModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Tanda Terima Permohonan Legalisir</h3>
+        <button class="modal-close" onclick="closeModal('receiptModal')">&times;</button>
+      </div>
+      <div class="modal-body" id="receiptModalBody">
+        <!-- Rendered via JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal('receiptModal')">Tutup</button>
+        <button class="btn-primary" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Cetak Resi Loket TU
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Verifikasi / Tindakan Petugas TU -->
+  <div class="modal-overlay" id="adminActionModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Pemeriksaan & Verifikasi Dokumen - SDN Cipinang Melayu 03 Pagi</h3>
+        <button class="modal-close" onclick="closeModal('adminActionModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="adminActionDetails" style="margin-bottom:20px; background:var(--bg-card-subtle); padding:16px; border-radius:var(--radius-md);">
+          <!-- Info pemohon -->
+        </div>
+
+        <form id="adminUpdateForm" onsubmit="event.preventDefault();">
+          <input type="hidden" id="adminActionAppId">
+          <div class="form-group">
+            <label class="form-label" for="adminStatusSelect">Ubah Status Permohonan</label>
+            <select id="adminStatusSelect" class="form-control">
+              <option value="Menunggu Verifikasi">Menunggu Verifikasi (Antrean Loket TU)</option>
+              <option value="Sedang Diproses">Sedang Diproses (Lolos Validasi Buku Induk)</option>
+              <option value="Siap Diambil">Siap Diambil di Ruang TU / Siap Kirim</option>
+              <option value="Selesai">Selesai (Legalisir Diterbitkan Resmi)</option>
+              <option value="Ditolak">Ditolak / Berkas (KTP/Ijazah asli) Perlu Perbaikan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="adminOfficerInput">Nama Petugas Penanggung Jawab / Kepala Sekolah</label>
+            <input type="text" id="adminOfficerInput" class="form-control" value="Siti Nurjanah, M.Pd.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="adminOfficerNipInput">NIP</label>
+            <input type="text" id="adminOfficerNipInput" class="form-control" value="19720415 199803 2 004">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="adminNotesInput">Catatan Verifikator / Alasan (Tampak oleh Pemohon)</label>
+            <textarea id="adminNotesInput" class="form-control" rows="3" placeholder="Contoh: Dokumen asli (KTP/Ijazah asli) telah dicocokkan dengan Buku Induk Siswa SDN Cipinang Melayu 03 Pagi. Sah & Valid."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal('adminActionModal')">Batal</button>
+        <button class="btn-primary" onclick="submitAdminUpdate()">
+          Simpan Pembaruan Status
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Simulasi Notifikasi WhatsApp -->
+  <div class="modal-overlay" id="whatsappModal">
+    <div class="modal-dialog" style="max-width:500px;">
+      <div class="modal-header" style="background:#075e54; color:#fff;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; color:#fff;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          </div>
+          <div>
+            <h4 style="font-size:1rem; margin:0;">TU SDN Cipinang Melayu 03 Pagi</h4>
+            <span style="font-size:0.75rem; opacity:0.85;">Layanan Notifikasi Resmi Sekolah</span>
+          </div>
+        </div>
+        <button class="modal-close" style="color:#fff;" onclick="closeModal('whatsappModal')">&times;</button>
+      </div>
+      <div class="modal-body" style="background:#e5ddd5; min-height:280px; padding:20px;">
+        <div style="background:#fff; border-radius:10px; padding:14px 18px; max-width:90%; box-shadow:0 1px 3px rgba(0,0,0,0.1); margin-bottom:12px; font-size:0.875rem; line-height:1.5;" id="whatsappMessageContent">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" style="background:#25D366;" onclick="closeModal('whatsappModal')">
+          Tutup Simulasi WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>SDN Cipinang Melayu 03 Pagi</h3>
+        <p>Sistem Pengesahan dan Legalisir Ijazah Elektronik Resmi SDN Cipinang Melayu 03 Pagi, Kecamatan Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tautan Layanan</h4>
+        <ul class="footer-links">
+          <li><a href="#view-home" onclick="switchView('home')">Beranda Layanan</a></li>
+          <li><a href="#view-form" onclick="switchView('form')">Ajukan Permohonan</a></li>
+          <li><a href="#view-track" onclick="switchView('track')">Lacak Status Berkas</a></li>
+          <li><a href="#view-verify" onclick="switchView('verify')">Verifikasi Keabsahan QR</a></li>
+          <li><a href="#view-admin" onclick="switchView('admin')">Portal Petugas TU (Admin)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Dasar Hukum</h4>
+        <ul class="footer-links">
+          <li><a href="#">Permendikbudristek No. 29/2014</a></li>
+          <li><a href="#">Juknis Dinas Pendidikan DKI Jakarta</a></li>
+          <li><a href="#">UU No. 11/2008 (ITE)</a></li>
+          <li><a href="#">Standar BSrE - BSSN RI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Loket Tata Usaha</h4>
+        <p style="font-size:0.85rem; color:#94a3b8; line-height:1.6;">
+          <strong>Ruang Tata Usaha (TU)</strong><br>
+          SDN Cipinang Melayu 03 Pagi<br>
+          Jl. Cipinang Bali II No. 1 / Jl. Elang, RT.03/RW.13, Cipinang Melayu, Kec. Makasar, Kota Jakarta Timur, DKI Jakarta 13620<br>
+          Telepon: (021) 862-3450<br>
+          Email: sdn.cipinangmelayu03pagi@jakarta.go.id
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 SDN Cipinang Melayu 03 Pagi - Dinas Pendidikan Provinsi DKI Jakarta. Hak Cipta Dilindungi Undang-Undang.</p>
+      <p>Layanan Legalisir Ijazah & Dokumen Kelulusan Terverifikasi Digital</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
